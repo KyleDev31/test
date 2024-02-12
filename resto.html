@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTO</title>
+    <style>
+        body {
+            background-image: url('image.jpg'); /* Replace 'your-background-image.jpg' with the path to your image */
+            background-size: cover; /* This property ensures the background image covers the entire viewport */
+            background-position: center; 
+            background-repeat: no-repeat;
+            height: 530px;/* This property centers the background image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .text-bubble {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            text-align: center;
+        }
+        #music-player {
+    display: none;
+    max-width: 50%;
+}
+.controls{
+ background-color: pink;   
+}
+
+        a {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="text-bubble" class="text-bubble">
+        <p>Hi Ms. Maurice pleasure to have you today!<br>
+            Kyle is waiting for you!
+        </p>
+        <a href="#" id="proceed">Proceed</a>
+    </div>
+
+    <div id="music-player">
+        <!-- Your music player code goes here -->
+        <h2></h2>
+        <audio controls>
+            <source src="vm.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <div id="music-player1">
+        <!-- Your music player code goes here -->
+        <h2></h2>
+        <audio autoplay>
+            <source src="bg.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        document.getElementById('proceed').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            document.getElementById('text-bubble').style.display = 'none'; // Hide text bubble
+            document.getElementById('music-player').style.display = 'block';
+            audioElement.play();
+ // Show music player
+        });
+    </script>
+</body>
+</html>

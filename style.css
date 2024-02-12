@@ -1,0 +1,81 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Make the body cover the entire viewport height */
+    position: relative;
+    background: linear-gradient(to top left, #630404, #bf1d1d, #ff0000, #f35d5d); 
+    overflow: hidden;/* Adjust the colors as needed */
+}
+
+.heart {
+    --c: red;
+    width: 800px;
+    aspect-ratio: 1;
+    background:
+    /* 1 */ radial-gradient(circle at 60% 65%, var(--c) 64%, #0000 65%) top left/50% 50%,
+    /* 2 */ radial-gradient(circle at 40% 65%, var(--c) 64%, #0000 65%) top right/50% 50%,
+    /* 3 */ conic-gradient(from -45deg at 50% 85.5%, var(--c) 90deg, #0000 0) bottom/100% 50%;
+    background-repeat: no-repeat;
+    animation: heartbeat 3s infinite; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 30%;/* Apply heartbeat animation */
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Scale up */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(249, 108, 131);
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+    margin-top: 50px;
+    text-shadow: 
+    -1px -1px 0 #fff,  
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
+    
+}
+button {
+    background: repeating-linear-gradient(-45deg, 
+                    rgb(22, 4, 125), 
+                    rgb(22, 4, 125) 5px, 
+                    rgb(253, 4, 166) 5px, 
+                    rgb(247, 3, 194) 20px); /* Change the color and size as needed */
+    padding: 10px;
+    border-radius: 20px; /* Adjust the value to make the button more or less rounded */
+    border:linear;
+    border-color: white; /* Remove default button border */
+    color: white; /* Text color */
+    font-weight: 600;
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+     /* Text size */
+}
+
+button:hover {
+    background: repeating-linear-gradient(-45deg, 
+                    rgb(247, 3, 194), 
+                    rgb(247, 3, 194) 5px, 
+                    rgb(253, 4, 166) 5px, 
+                    rgb(22, 4, 125) 20px); /* Change the color and size as needed */
+}
+
